@@ -1,12 +1,10 @@
 public class Patient{
     String name;
     String symptom;
-    String emergencyCode; //esta es la prioridad
 
-    public Patient(String name, String symptom, String emergencyCode) {
+    public Patient(String name, String symptom) {
         this.name = name;
         this.symptom = symptom;
-        this.emergencyCode = emergencyCode;
     }
 
     public String getName() {
@@ -21,12 +19,5 @@ public class Patient{
     public void setSymptom(String symptom) {
         this.symptom = symptom;
     }
-    public String getEmergencyCode() {
-        return emergencyCode;
-    }
-    public void setEmergencyCode(String emergencyCode) {
-        this.emergencyCode = emergencyCode;
-    }
-
 
 }

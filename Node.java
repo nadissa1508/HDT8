@@ -6,6 +6,11 @@ public class Node <K,V>{
     Node<K,V> Right;
     Node<K,V> Parent;
 
+    public Node(K priority, V infoPatient){
+        this.priority = priority;
+        this.infoPatient = infoPatient;
+    }
+
     public K getPriority() {
         return priority;
     }
@@ -44,51 +49,6 @@ public class Node <K,V>{
 
     public void setParent(Node<K, V> parent) {
         Parent = parent;
-    }
-
-    public void EvaluateInvariantOrder(Node<K,V> root){
-        if(root.getLeft() == null && root.getRight() == null){
-            return;
-        }
-
-        if(root.getRight() != null){
-            if((root.getLeft().getPritority() < root.getPritority()) && (root.getRight().getPritority() < root.getPritority()) ){
-                if(root.getLeft().getPritority() < root.getRight().getPritority()){
-                    swap(root, root.getLeft());
-                    EvaluateInvariantOrder(root.getLeft());
-                }else{
-                    swap(root, root.getRight());
-                    EvaluateInvariantOrder(root.getRight());
-                }
-            }else{
-                if((root.getLeft().getPritority() < root.getPritority()) || (root.getRight().getPritority() < root.getPritority()) ){
-                    if(root.getLeft().getPritority() < root.getPriority()){
-                        swap(root, root.getLeft());
-                        EvaluateInvariantOrder(root.getLeft());
-                    }else{
-                        swap(root, root.getRight());
-                        EvaluateInvariantOrder(root.getRight());
-                    }
-                }else{
-                    return;
-                }
-            }          
-        }else{
-            return;
-        }
-    }
-
-    public void InsertInvariantOrder(Node<K,V> root){
-
-    }
-
-    public void swap(Node raiz, Node nuevaRaiz){
-
-    }
-
-    //metodo para comparar prioridad del paciente
-    public void compareTo(){
-
     }
 
 }
