@@ -1,53 +1,57 @@
-public class Node <K,V>{
+public class Node <V>{
 
-    K priority;
-    V infoPatient;
-    Node<K,V> Left;
-    Node<K,V> Right;
-    Node<K,V> Parent;
+    String priority;
+    Patient infoPatient;
+    Node<V> Left;
+    Node<V> Right;
+    Node<V> Parent;
 
-    public Node(K priority, V infoPatient){
+    public Node(String priority, Patient infoPatient){
         this.priority = priority;
         this.infoPatient = infoPatient;
     }
+    public Node(Patient infoPatient) {
+        this.infoPatient = infoPatient;
+        this.priority = infoPatient.getEmergencyCode();
+    }
 
-    public K getPriority() {
+    public String getPriority() {
         return priority;
     }
 
-    public void setPritority(K priority) {
+    public void setPritority(String priority) {
         this.priority = priority;
     }
 
-    public V getInfoPatient() {
+    public Patient getPatient() {
         return infoPatient;
     }
 
-    public void setInfoPatient(V infoPatient) {
-        this.infoPatient = infoPatient;
+    public void setPatient(Patient patient) {
+        this.infoPatient = patient;
     }
 
-    public Node<K, V> getLeft() {
+    public Node<V> getLeft() {
         return Left;
     }
 
-    public void setLeft(Node<K, V> left) {
+    public void setLeft(Node<V> left) {
         Left = left;
     }
 
-    public Node<K, V> getRight() {
+    public Node<V> getRight() {
         return Right;
     }
 
-    public void setRight(Node<K, V> right) {
+    public void setRight(Node<V> right) {
         Right = right;
     }
 
-    public Node<K, V> getParent() {
+    public Node<V> getParent() {
         return Parent;
     }
 
-    public void setParent(Node<K, V> parent) {
+    public void setParent(Node<V> parent) {
         Parent = parent;
     }
 

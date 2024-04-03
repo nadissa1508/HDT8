@@ -16,12 +16,8 @@ public class ReadFile {
 
                 if (palabras.length == 3) {
                     // separar y almacenar datos del paciente
-                    Patient patient = new Patient(palabras[0].trim(), palabras[1].trim());
-                    String emergencyCode = palabras[2].trim();   
-
-                    // crear nodos y agregarlos a la cola
-                    Node<String, Patient> patientNode = new Node<>(emergencyCode, patient);
-                    patientsPriorityQueue.InsertInvariantOrder(patientNode);
+                    Patient patient = new Patient(palabras[0].trim(), palabras[1].trim(), palabras[2].trim()); 
+                    patientsPriorityQueue.InsertInvariantOrder(patient);
                 } else {
                     System.out.println("Formato de la línea incorrecto: " + line);
                 }
