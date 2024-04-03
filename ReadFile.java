@@ -1,9 +1,22 @@
+/**
+ * Universidad del Valle de Guatemala
+ * 
+ * @author Angie Nadissa Vela López, 23764
+ * @description clase que lee el txt pacientes y crea la cola de prioridad con la informacion del txt
+ * @date última modificación 02/04/2024
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class ReadFile {
 
+    
+    /** 
+     * @param fileName
+     * @return PriorityQueueTree
+     */
     public PriorityQueueTree readPatientsFile(String fileName) {
         PriorityQueueTree patientsPriorityQueue = new PriorityQueueTree();
         try {

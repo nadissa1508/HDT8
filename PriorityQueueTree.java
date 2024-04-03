@@ -1,3 +1,12 @@
+/**
+ * Universidad del Valle de Guatemala
+ * 
+ * @author Angie Nadissa Vela López, 23764
+ * @description clase con la lógica principal del programa, aqui se realiza la insercion y ordenamiento
+ * de los nodos
+ * @date última modificación 02/04/2024
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +19,10 @@ public class PriorityQueueTree {
         root = null;
     }
 
+    
+    /** 
+     * @param patient
+     */
     // Insertar un nuevo paciente en el árbol manteniendo la propiedad invariante
     public void InsertInvariantOrder(Patient patient) {
         // Si el árbol está vacío, el nuevo paciente se convierte en la raíz
@@ -24,6 +37,11 @@ public class PriorityQueueTree {
         patients.add(patient);
     }
 
+    
+    /** 
+     * @param node
+     * @param patient
+     */
     // Método recursivo para insertar el nuevo paciente en el lugar más a la izquierda del árbol
     private void insertLeftmost(Node node, Patient patient) {
         if (node.Left == null) {
@@ -35,6 +53,10 @@ public class PriorityQueueTree {
 
    
 
+    
+    /** 
+     * @param node
+     */
     // Recorrido inorden para mostrar los pacientes en el árbol
     private void inOrderTraversal(Node node) {
         if (node != null) {
@@ -44,11 +66,22 @@ public class PriorityQueueTree {
         }
     }
 
+    
+    /** 
+     * @param patient1
+     * @param patient2
+     * @return int
+     */
     // Método para comparar la prioridad de dos pacientes
     public int compareTo(Patient patient1, Patient patient2) {
         return patient1.getEmergencyCode().compareTo(patient2.getEmergencyCode());
     }
 
+    
+    /** 
+     * @param node1
+     * @param node2
+     */
     // Método para intercambiar los datos de dos nodos
     private void swap(Node node1, Node node2) {
         Patient temp = node1.getPatient();
@@ -76,17 +109,22 @@ public class PriorityQueueTree {
 
         // Obtener los pacientes según la lógica especificada
         List<Patient> sortedPatients = new ArrayList<>();
-        sortedPatients.add(patients.get(1)); // Segundo paciente
-        sortedPatients.add(patients.get(patients.size() - 1)); // Último paciente
-        sortedPatients.add(patients.get(0)); // Primer paciente
-        sortedPatients.add(patients.get(2)); // Tercer paciente
+        sortedPatients.add(patients.get(1)); 
+        sortedPatients.add(patients.get(patients.size() - 1)); 
+        sortedPatients.add(patients.get(0)); 
+        sortedPatients.add(patients.get(2)); 
         
 
         // Reemplazar la lista original con la lista ordenada
         patients = sortedPatients;
     }
 
-    // Método para evaluar y mantener la propiedad invariante del árbol
+    
+    /** 
+     * @param root
+     */
+    
+     // Método para evaluar y mantener la propiedad invariante del árbol
     public void EvaluateInvariantOrder(Node root) {
         if (root == null || (root.getLeft() == null && root.getRight() == null)) {
             // Si el nodo o sus hijos son nulos, no hay nada que hacer

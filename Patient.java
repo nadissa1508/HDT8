@@ -1,3 +1,10 @@
+/**
+ * Universidad del Valle de Guatemala
+ * 
+ * @author Angie Nadissa Vela López, 23764
+ * @description clase que modela un paciente
+ * @date última modificación 02/04/2024
+ */
 public class Patient implements Comparable<Patient> {
     String name;
     String symptom;
@@ -9,6 +16,10 @@ public class Patient implements Comparable<Patient> {
         this.emergencyCode = emergencyCode;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getName() {
         return name;
     }
