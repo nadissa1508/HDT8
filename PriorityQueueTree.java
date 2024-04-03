@@ -10,7 +10,7 @@ public class PriorityQueueTree{
          root = null;
      }
 
-     public void EvaluateInvariantOrder(Node<K,V> root){
+     public void EvaluateInvariantOrder(Node root){
         if(root.getLeft() == null && root.getRight() == null){
             return;
         }
@@ -40,6 +40,10 @@ public class PriorityQueueTree{
         }else{
             return;
         }
+    }
+
+    public void showPatients(){
+        
     }
 
     public void InsertInvariantOrder(Node<K,V> root){

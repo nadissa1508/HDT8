@@ -5,7 +5,7 @@ import java.io.IOException;
 public class ReadFile {
 
     public PriorityQueueTree readPatientsFile(String fileName) {
-        PriorityQueueTree PatientsPriorityQueue = new PriorityQueueTree();
+        PriorityQueueTree patientsPriorityQueue = new PriorityQueueTree();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
             String line;
@@ -21,7 +21,7 @@ public class ReadFile {
 
                     // crear nodos y agregarlos a la cola
                     Node<String, Patient> patientNode = new Node<>(emergencyCode, patient);
-                    PatientsPriorityQueue.InsertInvariantOrder(patientNode);
+                    patientsPriorityQueue.InsertInvariantOrder(patientNode);
                 } else {
                     System.out.println("Formato de la línea incorrecto: " + line);
                 }
@@ -31,6 +31,6 @@ public class ReadFile {
             System.out.println("Error, no se puede leer el archivo" + fileName);
             e.printStackTrace();
         }
-        return PatientsPriorityQueue;
+        return patientsPriorityQueue;
     }
 }
