@@ -35,7 +35,7 @@ public class Node <V>{
     /** 
      * @param priority
      */
-    public void setPritority(String priority) {
+    public void setPriority(String priority) {
         this.priority = priority;
     }
 
